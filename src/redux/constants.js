@@ -1,0 +1,3 @@
+//CONSTANTS
+export const SET_OVERVIEW = 'SET_OVERVIEW'
+export const SET_CAMPAIGNS = 'SET_CAMPAIGNS'

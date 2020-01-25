@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//import logo from "./logo.svg";
+import { HashRouter, Route } from "react-router-dom";
+import "antd/dist/antd.css";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Overview from "./components/Overview/Overview";
+import Campaigns from "./components/Campaigns/Campaigns";
+import Create from "./components/Create/Create";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <div className="container-fluid">
+        <div id="container">
+          <Header title="Stats" />
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Overview {...props} title="AppLike Frontend Test" />
+            )}
+          />
+          <Route exact path="/campaigns" render={props => <Campaigns />} />
+          <Route exact path="/create" render={props => <Create />} />
+        </div>
+      </div>
+    </HashRouter>
   );
 }
 
