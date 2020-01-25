@@ -1,0 +1,15 @@
+---
+- hosts: appserver
+  tasks:
+    - name: Installing nodejs
+      apt: name=nodejs update_cache=yes
+    - name: Installing npm
+      apt: name=npm update_cache=yes
+    - name: Installing dependencies
+      command: npm install
+    - name: Building
+      command: npm run build
+    - name: Installing web server
+      command: npm install serve
+    - name: Running app on http://localhost:8080
+      command: chdir=./build serve -p 8080
