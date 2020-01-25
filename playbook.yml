@@ -9,7 +9,7 @@
       command: npm install
     - name: Building
       command: npm run build
-    - name: serve
+    - name: Installing serve
       snap: name=serve
     - name: Running app on http://localhost:8080
       command: chdir=./build serve -p 8080
