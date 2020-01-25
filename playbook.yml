@@ -9,8 +9,6 @@
       command: npm install
     - name: Building
       command: npm run build
-    - name: Installing web server
-      command: npm install serve
     - name: serve
       snap: name=serve
     - name: Running app on http://localhost:8080
